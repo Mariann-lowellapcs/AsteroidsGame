@@ -37,7 +37,14 @@ public void keyPressed()
    {
      bob.accelerate(1);
  }
- //if (keyCode == DOWN)
+ if (keyCode == DOWN)
+ {
+   bob.setDirectionX(0);
+   bob.setDirectionY(0);
+   bob.setPointDirection((int)(Math.random()*500));
+   bob.setX((int)Math.random()*500);
+  bob.setY((int)Math.random()*500);
+ }
 
 
  }
