@@ -11,6 +11,6 @@ class Stars //note that this class does NOT extend Floater
  public void show()
  {
    ellipse((int)myX,(int) myY,10,10);
-   fill(238,232,170);
+   fill(230,230,0);
 }
 }
