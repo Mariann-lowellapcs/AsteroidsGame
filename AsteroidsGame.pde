@@ -14,7 +14,7 @@ public void setup()
  {
    asteroids.add(i, new Asteroid());
  }
-   
+ 
 }
 public void draw() 
 {
@@ -26,11 +26,19 @@ public void draw()
  }
   bob.show();
   bob.move();
+  
+
   for(int i =0; i<asteroids.size();i++)
   {
     asteroids.get(i).show();
     asteroids.get(i).move();
   }
+   for( int i = 0; i<asteroids.size(); i++)
+ {
+   double d = dist(bob.getX(), bob.getY(), asteroids.get(i).getX(), asteroids.get(i).getY());
+   if(d <20)
+   asteroids.remove(i);
+ }
  
 }
 
