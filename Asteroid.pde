@@ -37,7 +37,8 @@ public Asteroid()
   {
     myCenterX += myDirectionX;    
     myCenterY += myDirectionY;     
-    myPointDirection+=speed;   
+    myPointDirection+=speed;  
+   
     if(speed == 0)
     {
       speed = (int)(Math.random()*5-2);
@@ -67,7 +68,8 @@ public Asteroid()
     else if (myCenterY < 0)
     {     
       myCenterY = 500;    
-    }          
+    }      
+  
          
   }
   public void setX(int x){myCenterX = x;}
