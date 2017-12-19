@@ -1,4 +1,5 @@
-Spaceship bob;
+ArrayList <Bullet> sue;
+ Spaceship bob;
 ArrayList <Asteroid> asteroids;
 Stars[] sun = new Stars[100];
 public void setup() 
@@ -13,8 +14,8 @@ public void setup()
  for (int i = 0; i <20; i++)
  {
    asteroids.add(i, new Asteroid());
- }
- 
+ } 
+sue = new ArrayList <Bullet>(); 
 }
 public void draw() 
 {
@@ -40,23 +41,48 @@ public void draw()
    asteroids.remove(i);
  }
  
+ for (int i =0; i <sue.size() ; i++)
+  {
+   sue.get(i).show();
+    sue.get(i).move();
+    
+  }
+  
+  for (int i =0; i<sue.size(); i++)
+  {
+    for (int j = 0; j<asteroids.size(); j++)
+    {
+       if (dist(sue.get(i).getX(), sue.get(i).getY(), asteroids.get(j).getX(), asteroids.get(j).getY())<30)
+      {
+      asteroids.remove(j);
+      sue.remove(i);
+      break;
+      
+      }
+    }
+  }
+ 
 }
 
 public void keyPressed()
  { 
-   if (keyCode == RIGHT)
+   if(key == 'b')
+   {
+     sue.add(new Bullet(bob));
+   }
+   if (key == 'a')
    {
    bob.turn(7);
  }
- if (keyCode == LEFT)
+ if (key == 'd')
  {
    bob.turn(-7);
  }
-   if (keyCode == UP)
+   if (key == 's')
    {
      bob.accelerate(1);
  }
- if (keyCode == DOWN)
+ if (key == 'w')
  {
    bob.setDirectionX(0);
    bob.setDirectionY(0);
