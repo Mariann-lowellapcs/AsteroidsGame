@@ -20,7 +20,7 @@ public Bullet(Spaceship bob)
   public void setDirectionY(double y){myDirectionY = y;}  
   public double getDirectionY(){return myDirectionY;}   
   public void setPointDirection(int degrees){myPointDirection = degrees;}   
-  public double getPointDirection(){return myPointDirection;} 
+  public double getPointDirection(){return (double)  myPointDirection;} 
  
   public void show()
 {
